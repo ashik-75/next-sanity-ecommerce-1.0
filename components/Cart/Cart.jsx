@@ -88,7 +88,7 @@ function Cart() {
           ) : (
             <>
               {/* Middle */}
-              <div className="h-auto border-y space-y-10 py-5 pb-20">
+              <div className="h-[75%] border-y space-y-10 py-5 pb-20 overflow-y-auto">
                 <CartProducts cartItems={cartItems} />
 
                 <form className="space-y-3">
@@ -105,7 +105,7 @@ function Cart() {
               <div className="space-y-3">
                 <div className="flex justify-between">
                   <p className="uppercase font-bold tracking-wider">Subtotal</p>
-                  <p>$ {cartTotalPrice}</p>
+                  <p>$ {cartTotalPrice.toFixed(2)}</p>
                 </div>
 
                 <button
