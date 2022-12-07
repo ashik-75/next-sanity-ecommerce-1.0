@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const Context = createContext();
 
@@ -53,6 +53,20 @@ export const StoreContextProvider = ({ children }) => {
     (prev, curr) => prev + curr.price * curr.qty,
     0
   );
+
+  useEffect(() => {
+    if (cartItems.length) {
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    }
+  }, [cartItems]);
+
+  useEffect(() => {
+    const localData = localStorage.getItem("cartItems")
+      ? JSON.parse(localStorage.getItem("cartItems"))
+      : [];
+
+    setCartItems(localData);
+  }, []);
 
   return (
     <Context.Provider
