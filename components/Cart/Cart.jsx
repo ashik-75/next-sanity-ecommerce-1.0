@@ -143,6 +143,7 @@ function Cart() {
                     Note: If you want to checkout ,please{" "}
                     <Link
                       href={"/login"}
+                      onClick={() => setIsCartOpen(false)}
                       className="underline underline-offset-2 text-rose-600"
                     >
                       Login Here
