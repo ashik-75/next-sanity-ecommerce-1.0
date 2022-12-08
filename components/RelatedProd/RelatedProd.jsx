@@ -7,7 +7,8 @@ import { sanity, urlFor } from "../../lib/sanity";
 
 function fetcher(...keys) {
   const category = keys?.[1];
-  const query = `*[_type == "product" && category._ref in *[_type == "category" && title match "${category}*"]._id]{
+  const currentProductId = keys?.[2];
+  const query = `*[_type == "product" && _id != "${currentProductId}" && category._ref in *[_type == "category" && title match "${category}*"]._id]{
         ...,
         category->
     }`;
@@ -15,8 +16,8 @@ function fetcher(...keys) {
   return sanity.fetch(query);
 }
 
-function RelatedProd({ category }) {
-  const { data, error, mutate } = useSWR(["category", category], fetcher);
+function RelatedProd({ category, _id }) {
+  const { data, error, mutate } = useSWR(["category", category, _id], fetcher);
 
   if (!data && !error) {
     return <div>Loading ...</div>;
@@ -25,8 +26,8 @@ function RelatedProd({ category }) {
     infinite: true,
     speed: 3000,
     autoplaySpeed: 1000,
-    slidesToShow: 2,
-    slidesToScroll: 2,
+    slidesToShow: data?.length >= 2 ? 2 : 1,
+    slidesToScroll: 1,
     initialSlide: 0,
     autoplay: true,
     pauseOnHover: true,

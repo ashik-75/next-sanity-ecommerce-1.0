@@ -140,7 +140,7 @@ function ProductDetails({ product }) {
           )}
         </div>
       </div>
-      {categoryName && <RelatedProd category={categoryName} />}
+      {categoryName && <RelatedProd category={categoryName} _id={_id} />}
     </>
   );
 }
