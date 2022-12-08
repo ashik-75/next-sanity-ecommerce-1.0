@@ -54,9 +54,10 @@ function ProductDetails({ product }) {
                   <img
                     src={urlFor(singleImage)}
                     className={`${
-                      activeImg?._key === singleImage?._key
+                      activeImg?._key === singleImage?._key ||
+                      image?.length === 1
                         ? " opacity-100"
-                        : "opacity-70"
+                        : "opacity-60"
                     } w-full h-full object-cover object-center`}
                   />
                 </div>
