@@ -33,7 +33,7 @@ function Product({ product }) {
           <p
             className={`tracking-wider absolute font-bold text-white right-4 bottom-5 z-10 text-xl `}
           >
-            ${price}
+            ${price?.toFixed(2)}
           </p>
           <div className="w-[100%] h-[100%] bg-gradient-to-t from-slate-600/50 absolute top-0 left-0"></div>
         </div>
