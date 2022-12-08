@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 
-function SearchBar() {
+function SlickSearch() {
   const [search, setSearch] = useState("");
   const router = useRouter();
 
@@ -12,10 +12,10 @@ function SearchBar() {
   };
 
   return (
-    <div className="hidden md:inline">
+    <div className="absolute w-full top-[86px] left-0  md:hidden">
       <form onSubmit={handleSearch}>
         <input
-          className="px-6 py-[6px] rounded-full border outline-none"
+          className="px-4 py-2 rounded-full border outline-none w-[90%] mx-auto block"
           placeholder="Search ...."
           value={search}
           name="search"
@@ -27,4 +27,4 @@ function SearchBar() {
   );
 }
 
-export default SearchBar;
+export default SlickSearch;

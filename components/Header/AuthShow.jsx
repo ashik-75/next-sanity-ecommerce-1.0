@@ -37,7 +37,7 @@ function AuthShow() {
       ) : (
         <div>
           <Link href={"/login"}>
-            <UserCircleIcon className="w-10 h-10" />
+            <UserCircleIcon className="w-7 h-7" />
           </Link>
         </div>
       )}

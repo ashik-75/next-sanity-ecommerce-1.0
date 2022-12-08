@@ -22,6 +22,7 @@ function RelatedProd({ category, _id }) {
   if (!data && !error) {
     return <div>Loading ...</div>;
   }
+
   const settings = {
     infinite: true,
     speed: 3000,
@@ -34,7 +35,7 @@ function RelatedProd({ category, _id }) {
     cssEase: "linear",
   };
 
-  return !data ? null : (
+  return !data?.length ? null : (
     <div className="p-5 w-[100%] overflow-hidden mb-5">
       <div className="my-10 text-2xl font-bold">Related Products</div>
       <Slider {...settings}>
@@ -48,12 +49,12 @@ function RelatedProd({ category, _id }) {
                   alt=""
                 />
               </div>
-              <div className="absolute top-52 left-20 z-10">
-                <h3 className="font-bold text-xl uppercase text-white">
+              <div className="absolute top-40 left-8 md:top-52 md:left-20 z-10">
+                <h3 className="font-bold text-base md:text-xl uppercase text-white">
                   {product.title}
                 </h3>
                 <h3 className="font-bold text-lg uppercase text-white">
-                  ${product.price}
+                  ${product.price?.toFixed(2)}
                 </h3>
               </div>
 
