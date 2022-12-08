@@ -9,11 +9,11 @@ function SuccessPage() {
   }, []);
 
   return (
-    <div className="h-[70vh] flex items-center justify-center">
-      <div className="space-y-3 flex flex-col items-center  p-10 rounded shadow">
+    <div className="h-[70vh] flex items-center justify-center p-5">
+      <div className="space-y-3 flex flex-col items-center  p-10 rounded shadow text-center">
         <p className="text-lg">
           {" "}
-          <span className="font-bold text-pink-700">Thansks,</span> Purchase
+          <span className="font-bold text-pink-700">Thanks,</span> Purchase
           Successfully Completed
         </p>
         <p>Check Your Inbox for Receipt</p>
