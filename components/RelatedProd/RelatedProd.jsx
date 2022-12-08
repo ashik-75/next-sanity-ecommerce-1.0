@@ -33,7 +33,7 @@ function RelatedProd({ category }) {
     cssEase: "linear",
   };
 
-  return (
+  return !data ? null : (
     <div className="p-5 w-[100%] overflow-hidden mb-5">
       <div className="my-10 text-2xl font-bold">Related Products</div>
       <Slider {...settings}>

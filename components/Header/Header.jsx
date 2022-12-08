@@ -43,16 +43,6 @@ function Header() {
             Home
           </Link>
         </li>
-        <li>
-          <Link href={"/about"} className="tracking-wide">
-            About Us
-          </Link>
-        </li>
-        <li>
-          <Link href={"/contact"} className="tracking-wide">
-            Contact
-          </Link>
-        </li>
       </ul>
 
       <div className="flex gap-10 items-center">
