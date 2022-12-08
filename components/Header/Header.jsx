@@ -41,7 +41,7 @@ function Header() {
             className="relative cursor-pointer hover:scale-110 transition-all"
           >
             <ShoppingCartIcon className="w-5 h-5" />
-            <span className=" top-[-10px] left-[20px] absolute w-6 h-6 flex items-center justify-center rounded-full font-bold  bg-rose-500 text-white ">
+            <span className=" top-[-10px] left-[16px] absolute w-5 h-5 flex items-center justify-center rounded-full font-bold  bg-rose-500 text-white ">
               {cartItems?.length}
             </span>
           </div>
