@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import PortableText from "react-portable-text";
@@ -6,6 +7,7 @@ import { useCartContext } from "../../context/StoreContext";
 import { sanity, urlFor } from "../../lib/sanity";
 
 function ProductDetails({ product }) {
+  const router = useRouter();
   const [activeImg, setActiveImg] = useState(null);
   const [qty, setQty] = useState(1);
   const { title, image, description, _createdAt, price, _id, category } =
@@ -32,6 +34,10 @@ function ProductDetails({ product }) {
     });
     toast.success(`${title} is added to Cart.`);
   };
+
+  if (router.isFallback) {
+    return <div>Loading ....</div>;
+  }
   return (
     <>
       <div className=" p-5 flex  flex-col md:flex-row gap-5">
@@ -163,7 +169,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
 

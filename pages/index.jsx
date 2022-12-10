@@ -52,7 +52,7 @@ function HomePage({ products, count }) {
               page === count ? "disabled opacity-50 cursor-not-allowed" : ""
             }`}
           >
-            {!data && !error ? (
+            {page !== 1 && !data && !error ? (
               <div role="status" className="space-x-3">
                 <span class="">Loading</span>
                 <svg
